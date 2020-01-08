@@ -1,0 +1,12 @@
+version: 0.2            
+phases:
+  install:
+    commands:
+      - aws cloudformationpackage --template-file samTemplate.yaml --s3-bucket gourav-labmda-pipeline --output-template-file outputSamTemplate.yaml
+
+artifacts:
+  type: zip
+  files:
+    - samTemplate.yaml
+    - outputsamTemplate.yaml
+  
